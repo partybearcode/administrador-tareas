@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * Menú principal de la aplicación.
+ *
  * @author Raúl & Erik
  */
 public class Main {
@@ -29,7 +30,9 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    // TODO Alumno A: opción 1 (añadir)
+                    System.out.print("Introduce la descripción: ");
+                    String descripcion = sc.nextLine();
+                    gestor.añadirTarea(descripcion);
                     break;
                 case 2:
                     // TODO Alumno B: opción 2 (listar)
