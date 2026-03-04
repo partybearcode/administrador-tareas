@@ -35,7 +35,7 @@ public class Main {
                     gestor.añadirTarea(descripcion);
                     break;
                 case 2:
-                    // TODO Alumno B: opción 2 (listar)
+                    gestor.mostrarTareas();
                     break;
                 case 0:
                     System.out.println("Hasta luego.");
