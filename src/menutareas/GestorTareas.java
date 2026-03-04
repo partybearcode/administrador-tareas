@@ -5,7 +5,8 @@ import java.util.ArrayList;
 /**
  * Clase que gestiona una lista de tareas.
  *
- * @author Raul & Erik
+ * @author Raul
+ * @author Erik
  */
 public class GestorTareas {
 

@@ -3,12 +3,34 @@ package menutareas;
 import java.util.Scanner;
 
 /**
- * Menú principal de la aplicación.
+ * Clase principal de la aplicación de consola.
+ * <p>
+ * Muestra un menú interactivo para gestionar una lista de tareas, permitiendo:
+ * </p>
+ * <ul>
+ * <li>Añadir una tarea (opción 1).</li>
+ * <li>Listar las tareas existentes (opción 2).</li>
+ * <li>Salir del programa (opción 0).</li>
+ * </ul>
  *
- * @author Raúl & Erik
+ * @author Raúl
+ * @author Erik
  */
 public class Main {
 
+    /**
+     * Punto de entrada de la aplicación.
+     * <p>
+     * Crea un {@link GestorTareas} y gestiona la interacción con el usuario
+     * mediante un menú repetitivo que solicita una opción por teclado. El bucle
+     * se repite hasta que el usuario selecciona la opción 0 (salir).
+     * </p>
+     * <p>
+     * La entrada de la opción se valida para asegurar que sea un número entero.
+     * </p>
+     *
+     * @param args argumentos de línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         GestorTareas gestor = new GestorTareas();
         Scanner sc = new Scanner(System.in);
