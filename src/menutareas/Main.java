@@ -8,9 +8,10 @@ import java.util.Scanner;
  * Muestra un menú interactivo para gestionar una lista de tareas, permitiendo:
  * </p>
  * <ul>
- * <li>Añadir una tarea (opción 1).</li>
- * <li>Listar las tareas existentes (opción 2).</li>
- * <li>Salir del programa (opción 0).</li>
+ *   <li>Añadir una tarea (opción 1).</li>
+ *   <li>Listar las tareas existentes (opción 2).</li>
+ *   <li>Marcar una tarea como completada (opción 3).</li>
+ *   <li>Salir del programa (opción 0).</li>
  * </ul>
  *
  * @author Raúl
@@ -40,6 +41,7 @@ public class Main {
             System.out.println("=== GESTOR DE TAREAS ===");
             System.out.println("1. Añadir tarea");
             System.out.println("2. Listar tareas");
+            System.out.println("3. Marcar tarea como completada");
             System.out.println("0. Salir");
             System.out.print("Opción: ");
 
@@ -56,12 +58,30 @@ public class Main {
                     String descripcion = sc.nextLine();
                     gestor.añadirTarea(descripcion);
                     break;
+
                 case 2:
                     gestor.mostrarTareas();
                     break;
+
+                case 3:
+                    // Mostrar tareas para que el usuario vea los números
+                    gestor.mostrarTareas();
+
+                    System.out.print("Número de tarea a marcar como completada: ");
+                    while (!sc.hasNextInt()) {
+                        sc.nextLine();
+                        System.out.print("Entrada inválida. Número de tarea: ");
+                    }
+                    int numeroTarea = sc.nextInt();
+                    sc.nextLine(); // limpiar salto de línea
+
+                    gestor.marcarCompletada(numeroTarea);
+                    break;
+
                 case 0:
                     System.out.println("Hasta luego.");
                     break;
+
                 default:
                     System.out.println("Opción no válida.");
             }

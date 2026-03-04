@@ -32,6 +32,7 @@ public class GestorTareas {
         tareas.add(new Tarea(descripcion.trim()));
         System.out.println("Tarea añadida.");
     }
+
     /**
      * Muestra por consola el listado de tareas. Si no hay tareas, informa al
      * usuario.
@@ -47,5 +48,27 @@ public class GestorTareas {
             String estado = t.isCompletada() ? "[X]" : "[ ]";
             System.out.println((i + 1) + ". " + estado + " " + t.getDescripcion());
         }
+    }
+
+    /**
+     * Marca como completada la tarea indicada por su número (empezando en 1).
+     *
+     * @param numeroTarea número mostrado al usuario (1..n)
+     */
+    public void marcarCompletada(int numeroTarea) {
+        int idx = numeroTarea - 1;
+
+        if (tareas.isEmpty()) {
+            System.out.println("No hay tareas registradas.");
+            return;
+        }
+
+        if (idx < 0 || idx >= tareas.size()) {
+            System.out.println("Número de tarea inválido.");
+            return;
+        }
+
+        tareas.get(idx).setCompletada(true);
+        System.out.println("Tarea marcada como completada.");
     }
 }
