@@ -1,20 +1,49 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package menutareas;
 
+import java.util.Scanner;
+
 /**
- *
- * @author Raul
+ * Menú principal de la aplicación.
+ * @author Raúl & Erik
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        GestorTareas gestor = new GestorTareas();
+        Scanner sc = new Scanner(System.in);
+
+        int opcion;
+        do {
+            System.out.println("=== GESTOR DE TAREAS ===");
+            System.out.println("1. Añadir tarea");
+            System.out.println("2. Listar tareas");
+            System.out.println("0. Salir");
+            System.out.print("Opción: ");
+
+            while (!sc.hasNextInt()) {
+                sc.nextLine();
+                System.out.print("Entrada inválida. Opción: ");
+            }
+            opcion = sc.nextInt();
+            sc.nextLine(); // limpiar salto de línea
+
+            switch (opcion) {
+                case 1:
+                    // TODO Alumno A: opción 1 (añadir)
+                    break;
+                case 2:
+                    // TODO Alumno B: opción 2 (listar)
+                    break;
+                case 0:
+                    System.out.println("Hasta luego.");
+                    break;
+                default:
+                    System.out.println("Opción no válida.");
+            }
+
+            System.out.println();
+        } while (opcion != 0);
+
+        sc.close();
     }
-    
 }
